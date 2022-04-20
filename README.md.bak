@@ -1,0 +1,62 @@
+# HW 4 (worth 2 HW grades)
+
+Homework 4 involves modeling a circuit using modified nodal analysis and running
+a transient simulation using the circuit model.
+
+## Instructions
+
+1. Update the Main.cpp to convert the circuit from the Template System Model to the Final System Model (see below).
+1. Simulate the system and produce the new outfile.csv results. You can verify the results using the benchmark_outfile.csv, running hw4_test.py script, or by pushing the outfile.csv to git.
+1. Stage, commit, and push your updated *Main.cpp* file. For auto-grading, you can also push your *outfile.csv* file. 
+
+
+## Template System Model
+
+```
+                      (2)
+            (0)       L1   (1)
+        .---------.---UUU---.    
+        |  ^      |         |   +
+    I1 ( ) |   R1 <      R2 <  vout
+        |         |         |   -
+        '---------+---------'
+                 -+-
+    [ v0  ]       '
+x = [ v1  ]
+    [ iL1 ]
+
+vout = v1
+```
+
+## Final System Model
+
+```
+                      (2)
+            (0)       L1          (1)        R3   (3)
+        .---------.---UUU---.------------.---VVV---.
+        |  ^      |         |  +         |         |+
+    I1 ( ) |   R1 <      R2 < vout   C1 ===       ( ) V1  (4)
+        |         |         |  -         |         |
+        '---------+---------'------------'---------'
+                 -+-
+    [ v0  ]       '
+    [ v1  ]
+x = [ iL1 ]
+    [ v3  ]
+    [ iV1 ]
+
+vout = v1
+```
+
+## System Parameters
+
+```
+I1 = 1 Adc
+R1 = 1 Ohm
+R2 = 1 Ohm
+L1 = 0.1 H
+C1 = 0.1 F
+R3 = 1 Ohm
+V1 = 1 Vdc
+```  
+
