@@ -134,7 +134,7 @@ int main()
 	{
 
 
-		plotter.AddRow(t, 0, x[4]);
+		plotter.AddRow(t, x[3], x[4]);
 		fout << t << "," << x[3] << endl;
 		cout << t << "," << x[3] << endl;
 
